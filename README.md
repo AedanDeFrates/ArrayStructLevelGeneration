@@ -8,8 +8,8 @@ This level generation project attempted to create a room first generation algori
 - Visual Studios
 
 #Unity Version
-[Download](https://unity.com/download) Unity Hub\
-[Download](https://unity.com/releases/editor/whats-new/6000.0.34#notes) Unity Version 6000.0.34f1 
+- [Download](https://unity.com/download) Unity Hub\
+- [Download](https://unity.com/releases/editor/whats-new/6000.0.34#notes) Unity Version 6000.0.34f1 
 
 #Running Algorithms
 1): Open the LevelGenerationTestScene
