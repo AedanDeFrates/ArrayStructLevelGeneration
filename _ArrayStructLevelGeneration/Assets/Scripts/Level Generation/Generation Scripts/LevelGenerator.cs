@@ -4,7 +4,8 @@ using UnityEngine.Tilemaps;
 public class LevelGenerator : MonoBehaviour
 {
     //tilemap is the initialized tilemap that level tiles will be initiated on
-    public Tilemap tilemap;
+    public Tilemap floorTilemap;
+    public Tilemap wallTilemap;
 
     //wall, and floor are public tiles that can be selected to be placed instead of the enum WALL and FLOOR
     public Tile wall;
@@ -22,7 +23,9 @@ public class LevelGenerator : MonoBehaviour
         Level level = new Level();
 
         //clears all tilemaps before adding new ones (+set tilecount to default)
-        tilemap.ClearAllTiles();
+        floorTilemap.ClearAllTiles();
+        wallTilemap.ClearAllTiles();
+
         tileCount = default;
 
         //outer foreach loop iterates through all chunks in the level
@@ -51,14 +54,14 @@ public class LevelGenerator : MonoBehaviour
                 if (room.roomGrid[i, j] == Room.Grid.FLOOR)
                 {
                     //places floor tile and adds to tilecount
-                    tilemap.SetTile(tilePlacer, floor);
+                    floorTilemap.SetTile(tilePlacer, floor);
                     tileCount++;
                 }
                 //checks if the Grid enum in the room is set to wall
                 if (room.roomGrid[i, j] == Room.Grid.WALL)
                 {
                     //places wall tile
-                    tilemap.SetTile(tilePlacer, wall);
+                    wallTilemap.SetTile(tilePlacer, wall);
                 }
             }
         }

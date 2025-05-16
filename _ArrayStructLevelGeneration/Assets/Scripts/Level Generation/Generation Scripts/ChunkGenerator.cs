@@ -3,7 +3,8 @@ using UnityEngine.Tilemaps;
 
 public class ChunkGenerator : MonoBehaviour
 {
-    public Tilemap tilemap;
+    public Tilemap floorTilemap;
+    public Tilemap wallTilemap;
 
     public Tile wall;
     public Tile floor;
@@ -14,7 +15,9 @@ public class ChunkGenerator : MonoBehaviour
     {
         Walker4rmChunk chunk = new Walker4rmChunk();
 
-        tilemap.ClearAllTiles();
+        floorTilemap.ClearAllTiles();
+        wallTilemap.ClearAllTiles();
+
         tileCount = default;
 
         chunk.ScaleRoomPositions();
@@ -36,12 +39,12 @@ public class ChunkGenerator : MonoBehaviour
 
                 if (room.roomGrid[i, j] == AbstractRoom.Grid.FLOOR)
                 {
-                    tilemap.SetTile(tilePlacer, floor);
+                    floorTilemap.SetTile(tilePlacer, floor);
                     tileCount++;
                 }
                 if (room.roomGrid[i, j] == AbstractRoom.Grid.WALL)
                 {
-                    tilemap.SetTile(tilePlacer, wall);
+                    wallTilemap.SetTile(tilePlacer, wall);
                 }
             }
         }
