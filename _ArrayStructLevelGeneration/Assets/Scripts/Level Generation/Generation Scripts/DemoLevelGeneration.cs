@@ -20,6 +20,7 @@ public class DemoLevelGeneration : MonoBehaviour
 
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
+
         tileCount = default;
 
         foreach (Walker4rmChunk chunk in level.chunkList)

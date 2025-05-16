@@ -3,7 +3,8 @@ using UnityEngine.Tilemaps;
 
 public class RoomGenerator : MonoBehaviour
 {
-    public Tilemap tilemap;
+    public Tilemap floorTilemap;
+    public Tilemap wallTilemap;
 
     public Tile wall;
     public Tile floor;
@@ -11,7 +12,9 @@ public class RoomGenerator : MonoBehaviour
     public int tileCount = default;
     public void PlaceTiles()
     {
-        tilemap.ClearAllTiles();
+        floorTilemap.ClearAllTiles();
+        wallTilemap.ClearAllTiles();
+
         tileCount = default;
 
         WalkerRoom1x1 room = new WalkerRoom1x1();
@@ -26,12 +29,12 @@ public class RoomGenerator : MonoBehaviour
 
                 if (room.roomGrid[i, j] == AbstractRoom.Grid.FLOOR)
                 {
-                    tilemap.SetTile(tilePlacer, floor);
+                    floorTilemap.SetTile(tilePlacer, floor);
                     tileCount++;
                 }
                 if (room.roomGrid[i, j] == AbstractRoom.Grid.WALL)
                 {
-                    tilemap.SetTile(tilePlacer, wall);
+                    wallTilemap.SetTile(tilePlacer, wall);
                 }
             }
         }
