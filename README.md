@@ -8,11 +8,14 @@ This level generation project attempted to create a room first generation algori
 - Visual Studios
 
 #Unity Version
-- [Download](https://unity.com/download) Unity Hub\
+- [Download](https://unity.com/download) Unity Hub
 - [Download](https://unity.com/releases/editor/whats-new/6000.0.34#notes) Unity Version 6000.0.34f1 
+
+# Inspirations
+- RWA [Link](https://www.youtube.com/watch?v=6B7yOnqpK_Y&t=1s)
 
 #Running Algorithms
 1): Open the LevelGenerationTestScene
 2): Open Inspector
 3): Drop down the grid and click the Level Generator game object
-3): click any generate button
+4): click any generate button
